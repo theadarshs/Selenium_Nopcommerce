@@ -4,10 +4,8 @@ import pytest
 from selenium import webdriver
 from pageObjects.loginPage import LoginPage
 from utilities.BaseClass import BaseClass
-from utilities.readProperties import ReadConfig
-from utilities.customLogger import LogGen
 
-class Test_001_Login(BaseClass):
+class Test_Login(BaseClass):
 
     def test_login(self):
         log = self.getLogger()

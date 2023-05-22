@@ -10,7 +10,7 @@ from utilities.BaseClass import BaseClass
 import string
 import random
 
-class Test_003_AddCustomer(BaseClass):
+class Test_AddCustomer(BaseClass):
     def test_addCustomer(self):
         log = self.getLogger()
         log.info("************* Test_003_AddCustomer **********")
@@ -53,7 +53,7 @@ class Test_003_AddCustomer(BaseClass):
         msg = self.driver.find_element(By.TAG_NAME,"body").text
 
         print(msg)
-        if 'customer has been added successfuly.' in msg:
+        if 'customer has been added successfully.' in msg:
             assert True
             log.info("********* Add customer Test Passed *********")
         else:
