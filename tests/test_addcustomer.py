@@ -30,9 +30,7 @@ class Test_AddCustomer(BaseClass):
         addcust.clickOnCustomersMenuItem()
         time.sleep(3)
         addcust.clickOnAddnew()
-
         log.info("************* Providing customer info **********")
-
         email = random_generator() + "@gmail.com"
         addcust.setEmail(email)
         addcust.setPassword("test123")
