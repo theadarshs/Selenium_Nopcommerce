@@ -10,7 +10,7 @@ driver = None
 
 def pytest_addoption(parser):
     parser.addoption(
-        "--browser_name", action="store", default="firefox"
+        "--browser_name", action="store", default="chrome"
     )
 
 
@@ -19,10 +19,12 @@ def setup(request):
     global driver
     browser_name=request.config.getoption("browser_name")
     if browser_name == "chrome":
-        driver = webdriver.Chrome(executable_path="C:\selenium driver\chromedriver_win32\chromedriver.exe")
+        service_obj = Service("C:/Newfolder/chromedriver_win32/chromedriver.exe")
+        driver = webdriver.Chrome(service=service_obj)
+
     elif browser_name == "firefox":
-        options.binary_location = r'C:\Program Files\Mozilla Firefox\firefox.exe'
-        service_obj = Service(r'C:\Users\Abhishek Singh\Downloads\geckodriver-v0.31.0-win64\geckodriver.exe')
+        options.binary_location = r'C:/Program Files/Mozilla Firefox/firefox.exe'
+        service_obj = Service(r'C:/Newfolder/geckodriver-v0.33.0-win32/geckodriver.exe')
         driver = webdriver.Firefox(service=service_obj)
 
     elif browser_name == "IE":
