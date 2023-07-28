@@ -29,11 +29,11 @@ class Test_SearchCustomerByName(BaseClass):
         log.info("************* searching customer by Name **********")
         searchcust = SearchCustomer(self.driver)
         time.sleep(2)
-        searchcust.setFirstName().send_keys("test")
+        searchcust.setFirstName().send_keys("victoria")
         time.sleep(5)
         searchcust.clickSearch()
         time.sleep(5)
-        status=searchcust.searchCustomerByName("test")
+        status=searchcust.searchCustomerByName("victoria")
         assert True
         log.info("***************  TC_SearchCustomerByName_004 Finished  *********** ")
 
